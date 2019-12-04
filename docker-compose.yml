@@ -1,10 +1,10 @@
 version: '3'
 services:
-  flaskapp:
+  frontend:
     build: ./services/frontend
     restart: always
     expose:
       - "8000"
     volumes:
-      ./services/frontend:/usr/app
+      - ./services/frontend:/usr/app/src
 

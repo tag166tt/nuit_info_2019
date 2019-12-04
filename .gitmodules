@@ -1,0 +1,3 @@
+[submodule "services/frontend"]
+	path = services/frontend
+	url = git@github.com:vivescere/nuit-into-2019-service-frontend.git
