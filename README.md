@@ -5,10 +5,28 @@ Repo principal.
 ## Instructions
 
 ```bash
-# Pull all submodules
-git submodule update --init --recursive && git submodule update --recursive --remot
-
-# Run app
-docker-compose build && docker-compose up
+./dev.sh
 ```
 
+Puis, il sufit d'ouvrir [localhost:8000](http://localhost:8000).
+
+## Création d'un nouveau service
+
+1. Créer le repo (en public, ou alors il faut donner l'accès à tout ceux du groupe)
+2. Le cloner
+3. L'ajouter en tant que submodule: `git submodule add git@github.com:username/service-name.git name`. Attention: il faut que le repo ne soit pas vide.
+4. Créer le service dans `docker-compose.yml`; lui mettre un port spécifique pour permettre les tests
+5. Ne pas oublier d'ajouter le service au `depends_on` de `nginx` dans `docker-compose.yml`
+6. Ajouter les routes publiques (accessibles depuis le frontend) dans `services/nginx/nginx.conf`
+7. Pendant le développement, changer le volume vers le repo local
+8. Si besoin d'ajouter des dépendances, push le repo & update le clone local
+
+## Services
+
+### Frontend
+
+Application web avec l'utilisateur interagit.
+
+### Users
+
+API qui permet de stocker les comptes des utilisateurs.
