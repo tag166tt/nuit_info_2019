@@ -20,6 +20,7 @@ Puis, il sufit d'ouvrir [localhost:8000](http://localhost:8000).
 6. Ajouter les routes publiques (accessibles depuis le frontend) dans `services/nginx/nginx.conf`
 7. Pendant le développement, changer le volume vers le repo local
 8. Si besoin d'ajouter des dépendances, push le repo & update le clone local
+9. Pour les migrations: faire en sorte de lancer les migrations au lancement du service
 
 ## Services
 
