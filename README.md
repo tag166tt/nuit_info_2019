@@ -22,6 +22,20 @@ Puis, il sufit d'ouvrir [localhost:8000](http://localhost:8000).
 8. Si besoin d'ajouter des dépendances, push le repo & update le clone local
 9. Pour les migrations: faire en sorte de lancer les migrations au lancement du service
 
+Exemple de configuration pour lumen:
+```yaml
+  test:
+    build: ./services/test-srv
+    restart: always
+    volumes:
+      - ./services/test-srv:/application
+    command: php -S 0.0.0.0:8000 -t public
+    ports:
+      - "3002:8000"
+    depends_on:
+      - postgres
+```
+
 ## Services
 
 ### Frontend
@@ -31,3 +45,4 @@ Application web avec l'utilisateur interagit.
 ### Users
 
 API qui permet de stocker les comptes des utilisateurs.
+
