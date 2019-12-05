@@ -18,9 +18,10 @@ Puis, il sufit d'ouvrir [localhost:8000](http://localhost:8000).
 4. Créer le service dans `docker-compose.yml`; lui mettre un port spécifique pour permettre les tests
 5. Ne pas oublier d'ajouter le service au `depends_on` de `nginx` dans `docker-compose.yml`
 6. Ajouter les routes publiques (accessibles depuis le frontend) dans `services/nginx/nginx.conf`
-7. Pendant le développement, changer le volume vers le repo local
-8. Si besoin d'ajouter des dépendances, push le repo & update le clone local
-9. Pour les migrations: faire en sorte de lancer les migrations au lancement du service
+7. Créer la base de donnée dans `docker-compose.yml`, puis lancer `docker-compose down` (sinon la nouvelle DB n'est pas créée)
+8. Pendant le développement, changer le volume vers le repo local
+9. Si besoin d'ajouter des dépendances, push le repo & update le clone local
+10. Pour les migrations: faire en sorte de lancer les migrations au lancement du service
 
 Exemple de configuration pour lumen:
 ```yaml
